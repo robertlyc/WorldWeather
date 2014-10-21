@@ -38,6 +38,9 @@ class MasterViewController: UITableViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
+    tableView.rowHeight = UITableViewAutomaticDimension
+    tableView.estimatedRowHeight = 100
+    
     if let split = self.splitViewController {
       let controllers = split.viewControllers
       detailViewController = controllers[controllers.count-1].topViewController as? DetailViewController
