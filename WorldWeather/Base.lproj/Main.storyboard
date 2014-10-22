@@ -213,6 +213,15 @@
                                             <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="150"/>
                                         </variation>
                                     </label>
+                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hP0-Ht-HRM">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="150"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="150" id="qDi-sO-vlk"/>
+                                        </constraints>
+                                        <connections>
+                                            <segue destination="988-rV-JtB" kind="embed" id="feV-n8-Bce"/>
+                                        </connections>
+                                    </containerView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.22101389630000001" green="0.50662462070000003" blue="0.73999521680000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -220,10 +229,13 @@
                                         <variation key="heightClass=compact" constant="30"/>
                                     </constraint>
                                     <constraint firstAttribute="centerX" secondItem="omh-zH-HAS" secondAttribute="centerX" id="MsH-gv-8gw"/>
+                                    <constraint firstItem="hP0-Ht-HRM" firstAttribute="leading" secondItem="Ysq-o1-8AH" secondAttribute="leading" id="TBO-4k-woc"/>
                                     <constraint firstAttribute="bottom" secondItem="bt7-OR-lfe" secondAttribute="bottom" id="lPW-Zw-52J"/>
                                     <constraint firstAttribute="width" secondItem="bt7-OR-lfe" secondAttribute="width" id="nS4-QJ-WAJ"/>
                                     <constraint firstItem="omh-zH-HAS" firstAttribute="width" secondItem="Ysq-o1-8AH" secondAttribute="width" id="okf-69-Io1"/>
+                                    <constraint firstItem="hP0-Ht-HRM" firstAttribute="top" secondItem="Ysq-o1-8AH" secondAttribute="top" id="rON-qV-kCC"/>
                                     <constraint firstAttribute="centerX" secondItem="bt7-OR-lfe" secondAttribute="centerX" id="sAy-X4-8Fn"/>
+                                    <constraint firstAttribute="trailing" secondItem="hP0-Ht-HRM" secondAttribute="trailing" id="sHE-4j-f4J"/>
                                     <constraint firstItem="omh-zH-HAS" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="bt7-OR-lfe" secondAttribute="top" constant="50" id="teS-vo-IjP"/>
                                 </constraints>
                             </view>
@@ -250,7 +262,7 @@
             <objects>
                 <collectionViewController storyboardIdentifier="dailyWeatherCollectionView" id="988-rV-JtB" userLabel="Daily Weather Collection View" customClass="DailyWeatherCollectionViewController" customModule="WorldWeather" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="yMs-tn-Vxl">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="150"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.22101389630000001" green="0.50662462070000003" blue="0.73999521680000002" alpha="1" colorSpace="calibratedRGB"/>
                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="2" minimumInteritemSpacing="2" id="dVr-V4-e44">
