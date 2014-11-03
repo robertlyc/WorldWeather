@@ -200,6 +200,9 @@
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="150"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
+                                        <variation key="heightClass=compact" misplaced="YES">
+                                            <rect key="frame" x="0.0" y="150" width="300" height="177"/>
+                                        </variation>
                                         <variation key="widthClass=compact">
                                             <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="100"/>
                                         </variation>
@@ -218,6 +221,11 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="150" id="qDi-sO-vlk"/>
                                         </constraints>
+                                        <variation key="heightClass=compact">
+                                            <mask key="constraints">
+                                                <exclude reference="qDi-sO-vlk"/>
+                                            </mask>
+                                        </variation>
                                         <connections>
                                             <segue destination="988-rV-JtB" kind="embed" id="feV-n8-Bce"/>
                                         </connections>
@@ -242,6 +250,18 @@
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="EPz-ac-c4l"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=compact">
+                                    <mask key="subviews">
+                                        <exclude reference="hP0-Ht-HRM"/>
+                                    </mask>
+                                    <mask key="constraints">
+                                        <exclude reference="TBO-4k-woc"/>
+                                        <exclude reference="rON-qV-kCC"/>
+                                        <exclude reference="sHE-4j-f4J"/>
+                                        <include reference="EPz-ac-c4l"/>
+                                        <exclude reference="eou-gv-hk5"/>
                                     </mask>
                                 </variation>
                             </view>
