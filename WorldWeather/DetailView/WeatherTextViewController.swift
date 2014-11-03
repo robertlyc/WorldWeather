@@ -23,7 +23,7 @@
 import UIKit
 
 @objc protocol CityWeatherContainer {
-  var cityWeather: CityWeather? { get set }
+    var cityWeather: CityWeather? { get set }
 }
 
 
@@ -32,13 +32,14 @@ class WeatherTextViewController: UIViewController, CityWeatherContainer {
   // MARK: - IBOutlets
   @IBOutlet weak var cityNameLabel: UILabel!
   @IBOutlet weak var temperatureLabel: UILabel!
-  
+
   // MARK: - Properties
   var cityWeather: CityWeather? {
   didSet {
     if isViewLoaded() {
       configureView()
     }
+    provideDataToChildViewControllers()
   }
   }
   
@@ -48,12 +49,22 @@ class WeatherTextViewController: UIViewController, CityWeatherContainer {
     // Do any additional setup after loading the view.
     configureView()
   }
-  
-  // MARK: - Utility methods
+    
+      // MARK: - Utility methods
   private func configureView() {
     if let cityWeather = cityWeather {
       cityNameLabel.text = cityWeather.name
       temperatureLabel.text = "\(cityWeather.weather[0].status.temperature)"
+    }
+  }
+    
+  private func provideDataToChildViewControllers() {
+    for vc in childViewControllers {
+      if let weeklyWeatherContainer = vc as? WeeklyWeatherContainer {
+        if let weeklyWeaher = cityWeather?.weather {
+          weeklyWeatherContainer.dailyWeather = weeklyWeaher
+        }
+      }
     }
   }
 }
