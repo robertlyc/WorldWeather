@@ -64,6 +64,6 @@ extension DailyWeather {
 extension WeatherStatus {
   private init(dictionary: NSDictionary) {
     let dictType = dictionary["type"] as String
-    self.init(temperature: dictionary["temperature"] as Int, type: WeatherStatusType.fromRaw(dictType)!)
+    self.init(temperature: dictionary["temperature"] as Int, type: WeatherStatusType(rawValue: dictType)!)
   }
 }

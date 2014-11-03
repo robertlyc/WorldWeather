@@ -28,7 +28,7 @@ class DailyWeatherCollectionViewController: UICollectionViewController {
 
   var dailyWeather: [DailyWeather] = [DailyWeather]() {
   didSet {
-    collectionView?.reloadData()
+    collectionView.reloadData()
   }
   }
   
